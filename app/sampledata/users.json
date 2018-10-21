@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "fullname": "Baldomero Llégate Ligero",
+      "email": "baldomero@gmail.com",
+      "phonenumber": "666666666",
+      "address": "Avda. Duque de Rivas s/n, Algeciras",
+      "web": "http://www.iessaladillo.es"
+    },
+    {
+      "fullname": "Germán Ginés de todos los Santos",
+      "email": "germangines@gmail.com",
+      "phonenumber": "999999999",
+      "address": "Avda. Duque de Rivas s/n, Algeciras",
+      "web": "http://www.iessaladillo.es"
+    }
+  ]
+}

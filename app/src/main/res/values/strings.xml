@@ -1,0 +1,10 @@
+<resources>
+    <!-- DO NOT TOUCH -->
+    <string name="app_name">Profile</string>
+    <string name="activity_avatar_label">Select Avatar</string>
+    <string name="main_invalid_data">Invalid data</string>
+    <string name="main_save">Save</string>
+    <string name="main_saved_succesfully">Student saved successfully</string>
+    <string name="main_error_saving">Error saving student</string>
+    <!-- -->
+</resources>

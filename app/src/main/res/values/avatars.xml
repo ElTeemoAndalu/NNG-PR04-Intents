@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DO NOT TOUCH -->
+<resources>
+    <string name="avatar1_name">Tom</string>
+    <string name="avatar2_name">Luna</string>
+    <string name="avatar3_name">Simba</string>
+    <string name="avatar4_name">Kitty</string>
+    <string name="avatar5_name">Felix</string>
+    <string name="avatar6_name">Nina</string>
+</resources>
