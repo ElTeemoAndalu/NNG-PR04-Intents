@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PR04-Intents-Base.iml" filepath="$PROJECT_DIR$/PR04-Intents-Base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NNG-PR04-Intents.iml" filepath="$PROJECT_DIR$/NNG-PR04-Intents.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

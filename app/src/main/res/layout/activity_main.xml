@@ -9,4 +9,40 @@
 
     <!-- TODO: Include activity_main_profile -->
 
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/imgAvatar_description"
+        android:scaleType="centerCrop"
+        android:tag="@+id/imgAvatar"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cat1" />
+
+    <TextView
+        android:id="@+id/lblAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/standardMargin"
+        android:layout_marginBottom="@dimen/standardMargin"
+        android:background="@color/colorBlack"
+        android:backgroundTint="@color/colorBlack"
+        android:padding="@dimen/standardMargin"
+        android:text="@string/main_lblAvatar_defaultName"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        layout="@layout/activity_main_profile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

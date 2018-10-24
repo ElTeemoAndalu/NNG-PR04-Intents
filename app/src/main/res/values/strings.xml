@@ -1,10 +1,27 @@
 <resources>
     <!-- DO NOT TOUCH -->
-    <string name="app_name">Profile</string>
+    <string name="app_name">NNG-PR04-Intent</string>
     <string name="activity_avatar_label">Select Avatar</string>
     <string name="main_invalid_data">Invalid data</string>
     <string name="main_save">Save</string>
     <string name="main_saved_succesfully">Student saved successfully</string>
     <string name="main_error_saving">Error saving student</string>
+    <string name="imgAvatar_description">A picture of an adorable cat</string>
+    <string name="main_lblName">Name</string>
+    <string name="main_txtName_hint">(name)</string>
+    <string name="main_txtEmail">email</string>
+    <string name="main_lblPhonenumber">Phone number</string>
+    <string name="main_txtPhonenumber_hint">(phone)</string>
+    <string name="main_txtEmail_hint">(email)</string>
+    <string name="imgPhonenumber_description">Phone icon</string>
+    <string name="imgEmail_description">Email icon</string>
+    <string name="main_lblAddress">Address</string>
+    <string name="main_txtWeb">(url)</string>
+    <string name="main_lblWeb">Web</string>
+    <string name="main_txtAddress_hint">(address)</string>
+    <string name="imgAddress_description">Address icon</string>
+    <string name="imageWeb_description">Web icon</string>
+    <string name="main_lblAvatar_defaultName">Tom</string>
+    <string name="standard_img_ratio">16:9</string>
     <!-- -->
 </resources>
