@@ -3,4 +3,5 @@
     <dimen name="standardMargin">8dp</dimen>
     <dimen name="main_profile_margin_Start">16dp</dimen>
     <dimen name="lblPadding">4dp</dimen>
+    <dimen name="lblPhone_fixedWidth">111dp</dimen>
 </resources>

@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private final EditText[] txtFields = new EditText[EDITTEXT_QUANTITY];
     private final TextView[] lblFields = new TextView[EDITTEXT_QUANTITY];
     private String errorMsg;
-    private ImageView imgEmail,imgPhone,imgAddress,imgWeb;
+    private ImageView imgEmail, imgPhone, imgAddress, imgWeb;
     private Avatar profileAvatar;
     Database database;
 
@@ -102,57 +102,77 @@ public class MainActivity extends AppCompatActivity {
         //These listeners are split due to them not working on a separate class
         txtFields[NAME].addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                FieldEnabler.enableOrDisableFieldState(TextUtils.isEmpty(s),txtFields[NAME],null, lblFields[NAME], errorMsg);
+                FieldEnabler.enableOrDisableFieldState(TextUtils.isEmpty(s), txtFields[NAME], null, lblFields[NAME], errorMsg);
             }
+
             @Override
-            public void afterTextChanged(Editable s) { }
+            public void afterTextChanged(Editable s) {
+            }
         });
 
         txtFields[EMAIL].addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                FieldEnabler.enableOrDisableFieldState(ValidationUtils.isValidEmail(s.toString()),txtFields[EMAIL], imgEmail, lblFields[EMAIL], errorMsg);
+                FieldEnabler.enableOrDisableFieldState(ValidationUtils.isValidEmail(s.toString()), txtFields[EMAIL], imgEmail, lblFields[EMAIL], errorMsg);
             }
+
             @Override
-            public void afterTextChanged(Editable s) { }
+            public void afterTextChanged(Editable s) {
+            }
         });
 
         txtFields[PHONE].addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                FieldEnabler.enableOrDisableFieldState(ValidationUtils.isValidPhone(s.toString()),txtFields[PHONE], imgPhone, lblFields[PHONE], errorMsg);
+                FieldEnabler.enableOrDisableFieldState(ValidationUtils.isValidPhone(s.toString()), txtFields[PHONE], imgPhone, lblFields[PHONE], errorMsg);
             }
+
             @Override
-            public void afterTextChanged(Editable s) { }
+            public void afterTextChanged(Editable s) {
+            }
         });
 
         txtFields[ADDRESS].addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                FieldEnabler.enableOrDisableFieldState(TextUtils.isEmpty(s),txtFields[ADDRESS], imgAddress, lblFields[ADDRESS], errorMsg);
+                FieldEnabler.enableOrDisableFieldState(TextUtils.isEmpty(s), txtFields[ADDRESS], imgAddress, lblFields[ADDRESS], errorMsg);
             }
+
             @Override
-            public void afterTextChanged(Editable s) { }
+            public void afterTextChanged(Editable s) {
+            }
         });
 
         txtFields[WEB].addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                FieldEnabler.enableOrDisableFieldState(ValidationUtils.isValidUrl(s.toString()),txtFields[WEB], imgWeb, lblFields[WEB], errorMsg);
+                FieldEnabler.enableOrDisableFieldState(ValidationUtils.isValidUrl(s.toString()), txtFields[WEB], imgWeb, lblFields[WEB], errorMsg);
             }
+
             @Override
-            public void afterTextChanged(Editable s) { }
+            public void afterTextChanged(Editable s) {
+            }
         });
 
 
@@ -171,20 +191,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showAddress() {
-        String address = String.format("geo:0,0?q=%s",txtFields[ADDRESS].getText().toString());
-        Intent showMap = new Intent(Intent.ACTION_VIEW,Uri.parse(address));
+        String address = String.format("geo:0,0?q=%s", txtFields[ADDRESS].getText().toString());
+        Intent showMap = new Intent(Intent.ACTION_VIEW, Uri.parse(address));
         startImplicitIntent(showMap);
     }
 
     private void callPhone() {
         String phoneWritten = txtFields[PHONE].getText().toString();
-        Intent callThisPhone = new Intent(Intent.ACTION_DIAL,Uri.parse(String.format("tel:%s",phoneWritten)));
+        Intent callThisPhone = new Intent(Intent.ACTION_DIAL, Uri.parse(String.format("tel:%s", phoneWritten)));
         startImplicitIntent(callThisPhone);
     }
 
     private void sendEmail() {
         String emailWritten = txtFields[EMAIL].getText().toString();
-        Intent sendToEmail = new Intent(Intent.ACTION_SENDTO,Uri.parse(String.format("mailto:%s",emailWritten)));
+        Intent sendToEmail = new Intent(Intent.ACTION_SENDTO, Uri.parse(String.format("mailto:%s", emailWritten)));
         startImplicitIntent(sendToEmail);
     }
 
@@ -276,11 +296,11 @@ public class MainActivity extends AppCompatActivity {
         boolean checkAddress = TextUtils.isEmpty(txtFields[ADDRESS].getText().toString());
         boolean checkeb = ValidationUtils.isValidUrl(txtFields[WEB].getText().toString());
 
-        FieldEnabler.enableOrDisableFieldState(checkName,txtFields[NAME],null, lblFields[NAME], errorMsg);
-        FieldEnabler.enableOrDisableFieldState(checkEmail,txtFields[EMAIL], imgEmail, lblFields[EMAIL], errorMsg);
-        FieldEnabler.enableOrDisableFieldState(checkPhone,txtFields[PHONE], imgPhone, lblFields[PHONE], errorMsg);
-        FieldEnabler.enableOrDisableFieldState(checkAddress,txtFields[ADDRESS], imgAddress, lblFields[ADDRESS], errorMsg);
-        FieldEnabler.enableOrDisableFieldState(checkeb,txtFields[WEB], imgWeb, lblFields[WEB], errorMsg);
+        FieldEnabler.enableOrDisableFieldState(checkName, txtFields[NAME], null, lblFields[NAME], errorMsg);
+        FieldEnabler.enableOrDisableFieldState(checkEmail, txtFields[EMAIL], imgEmail, lblFields[EMAIL], errorMsg);
+        FieldEnabler.enableOrDisableFieldState(checkPhone, txtFields[PHONE], imgPhone, lblFields[PHONE], errorMsg);
+        FieldEnabler.enableOrDisableFieldState(checkAddress, txtFields[ADDRESS], imgAddress, lblFields[ADDRESS], errorMsg);
+        FieldEnabler.enableOrDisableFieldState(checkeb, txtFields[WEB], imgWeb, lblFields[WEB], errorMsg);
 
         for (int i = 0; i < lblFields[0].length(); i++) {
             if (!lblFields[i].isEnabled()) {

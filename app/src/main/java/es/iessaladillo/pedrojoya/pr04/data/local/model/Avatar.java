@@ -47,7 +47,7 @@ public class Avatar implements Parcelable {
         dest.writeString(this.name);
     }
 
-    protected Avatar(Parcel in) {
+    private Avatar(Parcel in) {
         this.id = in.readLong();
         this.imageResId = in.readInt();
         this.name = in.readString();

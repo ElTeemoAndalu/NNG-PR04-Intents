@@ -21,14 +21,13 @@ import es.iessaladillo.pedrojoya.pr04.utils.ResourcesUtils;
 public class AvatarActivity extends AppCompatActivity {
 
     public static final String EXTRA_AVATAR = "EXTRA_AVATAR";
-    private Avatar prvlySelectedAvatar,selectedAvatar;
+    private Avatar prvlySelectedAvatar, selectedAvatar;
     private Database database;
     private ArrayList<ImageView> imagesList;
     private ArrayList<TextView> namesList;
-    private ConstraintLayout constLayout;
     private final int LBL_IMGVIEWS_PER_PICTURE = 2;
     private int avatarCount;
-    List<Avatar> avatarList;
+    private List<Avatar> avatarList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,28 +44,28 @@ public class AvatarActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        constLayout = ActivityCompat.requireViewById(this,R.id.constraintLayout);
+        ConstraintLayout constLayout = ActivityCompat.requireViewById(this, R.id.constraintLayout);
 
         imagesList = new ArrayList<>();
         namesList = new ArrayList<>();
 
-        imagesList.add(ActivityCompat.requireViewById(this,R.id.imgAvatar1));
-        imagesList.add(ActivityCompat.requireViewById(this,R.id.imgAvatar2));
-        imagesList.add(ActivityCompat.requireViewById(this,R.id.imgAvatar3));
-        imagesList.add(ActivityCompat.requireViewById(this,R.id.imgAvatar4));
-        imagesList.add(ActivityCompat.requireViewById(this,R.id.imgAvatar5));
-        imagesList.add(ActivityCompat.requireViewById(this,R.id.imgAvatar6));
+        imagesList.add(ActivityCompat.requireViewById(this, R.id.imgAvatar1));
+        imagesList.add(ActivityCompat.requireViewById(this, R.id.imgAvatar2));
+        imagesList.add(ActivityCompat.requireViewById(this, R.id.imgAvatar3));
+        imagesList.add(ActivityCompat.requireViewById(this, R.id.imgAvatar4));
+        imagesList.add(ActivityCompat.requireViewById(this, R.id.imgAvatar5));
+        imagesList.add(ActivityCompat.requireViewById(this, R.id.imgAvatar6));
 
-        namesList.add(ActivityCompat.requireViewById(this,R.id.lblAvatar1));
-        namesList.add(ActivityCompat.requireViewById(this,R.id.lblAvatar2));
-        namesList.add(ActivityCompat.requireViewById(this,R.id.lblAvatar3));
-        namesList.add(ActivityCompat.requireViewById(this,R.id.lblAvatar4));
-        namesList.add(ActivityCompat.requireViewById(this,R.id.lblAvatar5));
-        namesList.add(ActivityCompat.requireViewById(this,R.id.lblAvatar6));
+        namesList.add(ActivityCompat.requireViewById(this, R.id.lblAvatar1));
+        namesList.add(ActivityCompat.requireViewById(this, R.id.lblAvatar2));
+        namesList.add(ActivityCompat.requireViewById(this, R.id.lblAvatar3));
+        namesList.add(ActivityCompat.requireViewById(this, R.id.lblAvatar4));
+        namesList.add(ActivityCompat.requireViewById(this, R.id.lblAvatar5));
+        namesList.add(ActivityCompat.requireViewById(this, R.id.lblAvatar6));
 
         database = Database.getInstance();
 
-        avatarCount = constLayout.getChildCount()/LBL_IMGVIEWS_PER_PICTURE;
+        avatarCount = constLayout.getChildCount() / LBL_IMGVIEWS_PER_PICTURE;
 
         setAvatars();
 
@@ -82,7 +81,7 @@ public class AvatarActivity extends AppCompatActivity {
 
     private void selectPreviousAvatar() {
         for (int i = 0; i < avatarCount; i++) {
-            if(prvlySelectedAvatar.getImageResId() == database.queryAvatar((long) i+1).getImageResId()){
+            if (prvlySelectedAvatar.getImageResId() == database.queryAvatar((long) i + 1).getImageResId()) {
                 selectImageView(imagesList.get(i));
             }
         }
@@ -92,7 +91,7 @@ public class AvatarActivity extends AppCompatActivity {
     private void getSelectedAvatar(View v) {
         long selectedAvatarID;
         for (int i = 0; i < avatarCount; i++) {
-            if(v.getId() == namesList.get(i).getId() || v.getId() == imagesList.get(i).getId()){
+            if (v.getId() == namesList.get(i).getId() || v.getId() == imagesList.get(i).getId()) {
                 selectedAvatarID = avatarList.get(i).getId();
                 selectedAvatar = database.queryAvatar(selectedAvatarID);
             }
@@ -129,7 +128,7 @@ public class AvatarActivity extends AppCompatActivity {
 
     public static void startForResult(Activity actividad, int requestCode, Avatar avatar) {
         Intent intent = new Intent(actividad, AvatarActivity.class);
-        intent.putExtra(EXTRA_AVATAR,avatar);
+        intent.putExtra(EXTRA_AVATAR, avatar);
         actividad.startActivityForResult(intent, requestCode);
     }
 
@@ -141,7 +140,7 @@ public class AvatarActivity extends AppCompatActivity {
 
     private void sendAvatarBack() {
         Intent intent = new Intent();
-        intent.putExtra(EXTRA_AVATAR,selectedAvatar);
-        this.setResult(RESULT_OK,intent);
+        intent.putExtra(EXTRA_AVATAR, selectedAvatar);
+        this.setResult(RESULT_OK, intent);
     }
 }

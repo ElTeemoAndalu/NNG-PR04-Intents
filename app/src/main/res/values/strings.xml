@@ -22,6 +22,7 @@
     <string name="imgAddress_description">Address icon</string>
     <string name="imageWeb_description">Web icon</string>
     <string name="main_lblAvatar_defaultName">Tom</string>
-    <string name="standard_img_ratio">16:9</string>
+    <string name="avatar_DefaultCatName">TextView</string>
+    <string name="profileImgRatio">16:9</string>
     <!-- -->
 </resources>
