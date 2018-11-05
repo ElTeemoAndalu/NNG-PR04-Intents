@@ -204,10 +204,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void sendEmail() {
         String emailWritten = txtFields[EMAIL].getText().toString();
+        // DEBERÍAS COMPROBAR QUE HAY DATOS ANTES DE ENVIAR EL INTENT.
         Intent sendToEmail = new Intent(Intent.ACTION_SENDTO, Uri.parse(String.format("mailto:%s", emailWritten)));
         startImplicitIntent(sendToEmail);
     }
 
+    // DEBERÍAS DEFINIR ESTE MÉTODO COMO UN MÉTODO DE UTILIDAD PARA UTILIZARLO EN TODOS TUS
+    // PROYECTOS QUE USEN INTENT IMPLÍCITOS.
     private void startImplicitIntent(Intent implicitIntent) {
         try {
             startActivity(implicitIntent);
